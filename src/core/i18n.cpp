@@ -141,6 +141,9 @@ std::string I18n::get(StringId id) const {
                 case StringId::WebsiteLabel: return "Site oficial";
                 case StringId::ContactLabel: return "Contato";
                 case StringId::CloseButton: return "Fechar";
+                case StringId::TrayOpenClipboard: return "Abrir Área de Transferência (Win + V)";
+                case StringId::TrayClearHistory: return "Limpar Histórico";
+                case StringId::TrayQuit: return "Sair";
             }
             break;
 
@@ -165,6 +168,9 @@ std::string I18n::get(StringId id) const {
                 case StringId::WebsiteLabel: return "Official Website";
                 case StringId::ContactLabel: return "Contact";
                 case StringId::CloseButton: return "Close";
+                case StringId::TrayOpenClipboard: return "Open Clipboard (Win + V)";
+                case StringId::TrayClearHistory: return "Clear History";
+                case StringId::TrayQuit: return "Quit";
             }
             break;
 
@@ -189,6 +195,9 @@ std::string I18n::get(StringId id) const {
                 case StringId::WebsiteLabel: return "Sitio oficial";
                 case StringId::ContactLabel: return "Contacto";
                 case StringId::CloseButton: return "Cerrar";
+                case StringId::TrayOpenClipboard: return "Abrir Portapapeles (Win + V)";
+                case StringId::TrayClearHistory: return "Borrar Historial";
+                case StringId::TrayQuit: return "Salir";
             }
             break;
     }

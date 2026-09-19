@@ -34,6 +34,33 @@ int Application::run(int argc, char **argv) {
     return g_application_run(G_APPLICATION(gtk_app_), argc, argv);
 }
 
+void Application::setup_tray() {
+    if (tray_started_) return;
+    tray_started_ = true;
+
+    tray_manager_ = std::make_unique<tools::ui::TrayManager>();
+    tray_manager_->set_on_toggle([this]() {
+        if (window_) {
+            window_->toggle();
+        }
+    });
+    tray_manager_->set_on_clear_history([this]() {
+        clipboard_manager_.clear_history();
+    });
+    tray_manager_->set_on_open_settings([this]() {
+        if (window_) {
+            window_->open_settings();
+        }
+    });
+    tray_manager_->set_on_quit([this]() {
+        if (gtk_app_) {
+            g_application_quit(G_APPLICATION(gtk_app_));
+        }
+    });
+
+    tray_manager_->start();
+}
+
 void Application::on_activate(GtkApplication *gtk_app, gpointer user_data) {
     auto *self = static_cast<Application*>(user_data);
 
@@ -58,6 +85,9 @@ void Application::on_activate(GtkApplication *gtk_app, gpointer user_data) {
             self->clipboard_manager_
         );
     }
+
+    // Inicializa o ícone da bandeja do sistema (System Tray)
+    self->setup_tray();
 
     self->window_->show_and_refresh();
 }
@@ -99,6 +129,9 @@ int Application::on_command_line(GApplication *app, GApplicationCommandLine *cmd
             }
         }
     }
+
+    // Inicializa o ícone da bandeja do sistema (System Tray)
+    self->setup_tray();
 
     bool toggle_requested = false;
     bool daemon_only = false;

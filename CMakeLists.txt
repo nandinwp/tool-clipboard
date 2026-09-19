@@ -41,6 +41,7 @@ add_library(tools_ui STATIC
     src/ui/style.cpp
     src/ui/clipboard_window.cpp
     src/ui/settings_window.cpp
+    src/ui/tray_manager.cpp
     src/app.cpp
 )
 

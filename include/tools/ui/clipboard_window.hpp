@@ -25,6 +25,9 @@ public:
     // Retorna se a janela está atualmente visível
     bool is_visible() const;
 
+    // Abre a janela de configurações
+    void open_settings();
+
     GtkWidget* get_widget() const { return window_; }
 
 private:

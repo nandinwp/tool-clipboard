@@ -94,6 +94,13 @@ void ClipboardWindow::toggle() {
     }
 }
 
+void ClipboardWindow::open_settings() {
+    if (!settings_window_) {
+        settings_window_ = std::make_unique<SettingsWindow>(GTK_WINDOW(window_));
+    }
+    settings_window_->show();
+}
+
 void ClipboardWindow::update_texts() {
     auto &i18n = I18n::instance();
     if (window_) {

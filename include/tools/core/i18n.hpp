@@ -31,7 +31,10 @@ enum class StringId {
     DevelopedDateLabel,
     WebsiteLabel,
     ContactLabel,
-    CloseButton
+    CloseButton,
+    TrayOpenClipboard,
+    TrayClearHistory,
+    TrayQuit
 };
 
 class I18n {
