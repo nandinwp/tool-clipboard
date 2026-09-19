@@ -1,0 +1,265 @@
+/* Tema moderno inspirado no Win + V (Dark Glassmorphism / Acrylic) */
+
+window {
+    background-color: #181825;
+    color: #cdd6f4;
+    border-radius: 12px;
+}
+
+.window-container {
+    background-color: #1e1e2e;
+    border-radius: 12px;
+    border: 1px solid #313244;
+    padding: 12px;
+}
+
+.header-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #cdd6f4;
+}
+
+.header-app-icon {
+    border-radius: 4px;
+}
+
+.header-subtitle {
+    font-size: 12px;
+    color: #a6adc8;
+}
+
+.shortcut-badge {
+    background-color: #313244;
+    color: #89b4fa;
+    font-weight: bold;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid #45475a;
+}
+
+.clear-button {
+    background-color: transparent;
+    color: #f38ba8;
+    border-radius: 6px;
+    padding: 4px 8px;
+    border: 1px solid #45475a;
+    font-size: 12px;
+}
+
+.clear-button:hover {
+    background-color: #45475a;
+}
+
+.lang-dropdown {
+    background-color: #252538;
+    color: #cdd6f4;
+    border-radius: 6px;
+    border: 1px solid #45475a;
+    font-size: 11px;
+    padding: 0px 4px;
+}
+
+.lang-dropdown:hover {
+    background-color: #313244;
+}
+
+.header-settings-btn {
+    background-color: transparent;
+    color: #cdd6f4;
+    border-radius: 6px;
+    padding: 4px 8px;
+    border: 1px solid #45475a;
+    font-size: 13px;
+    transition: all 150ms ease;
+}
+
+.header-settings-btn:hover {
+    background-color: #313244;
+    color: #89b4fa;
+    border-color: #89b4fa;
+}
+
+/* Seções de Configurações e Sobre */
+.settings-gear-icon {
+    font-size: 16px;
+    color: #89b4fa;
+}
+
+.section-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #89b4fa;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+.settings-card {
+    background-color: #252538;
+    border-radius: 8px;
+    border: 1px solid #313244;
+    padding: 12px 14px;
+}
+
+.settings-item-label {
+    font-size: 13px;
+    color: #cdd6f4;
+}
+
+.settings-spin {
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    border-radius: 6px;
+    border: 1px solid #45475a;
+}
+
+.settings-separator {
+    background-color: #313244;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.about-app-icon {
+    border-radius: 8px;
+}
+
+.about-app-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #cdd6f4;
+}
+
+.about-app-version {
+    font-size: 12px;
+    color: #a6adc8;
+}
+
+.about-info-text {
+    font-size: 13px;
+    color: #bac2de;
+}
+
+.about-link-btn {
+    color: #89b4fa;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background-color: #1e1e2e;
+    border: 1px solid #313244;
+}
+
+.about-link-btn:hover {
+    background-color: #313244;
+    color: #b4befe;
+    border-color: #89b4fa;
+}
+
+.settings-close-btn {
+    background-color: #313244;
+    color: #cdd6f4;
+    border-radius: 6px;
+    padding: 8px 16px;
+    border: 1px solid #45475a;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 150ms ease;
+}
+
+.settings-close-btn:hover {
+    background-color: #89b4fa;
+    color: #181825;
+}
+
+/* Cards dos itens do histórico */
+.clipboard-card {
+    background-color: #252538;
+    border-radius: 8px;
+    border: 1px solid #313244;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.clipboard-card:hover {
+    background-color: #2f2f47;
+    border-color: #89b4fa;
+}
+
+.clipboard-card:focus {
+    background-color: #363652;
+    border-color: #b4befe;
+}
+
+.item-index-badge {
+    background-color: #313244;
+    color: #89b4fa;
+    font-weight: bold;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.item-time {
+    font-size: 11px;
+    color: #6c7086;
+}
+
+.item-content-preview {
+    font-size: 13px;
+    color: #cdd6f4;
+    font-family: monospace, sans-serif;
+    margin-top: 4px;
+}
+
+.item-delete-btn {
+    background: transparent;
+    color: #a6adc8;
+    border: 1px solid transparent;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    opacity: 0.7;
+    transition: all 150ms ease;
+}
+
+.item-delete-btn:hover {
+    color: #ffffff;
+    background: #e78284;
+    border-color: #ea999c;
+    opacity: 1.0;
+}
+
+.item-pin-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    opacity: 0.6;
+    transition: all 150ms ease;
+}
+
+.item-pin-btn:hover {
+    opacity: 1.0;
+    background: #313244;
+    border-color: #89b4fa;
+}
+
+.item-pin-btn.pinned {
+    opacity: 1.0;
+    background: #313244;
+    border-color: #89b4fa;
+}
+
+.clipboard-card.pinned {
+    border-left: 3px solid #89b4fa;
+    background-color: #26263b;
+}
+
+.empty-state-label {
+    color: #6c7086;
+    font-style: italic;
+    padding: 24px;
+}

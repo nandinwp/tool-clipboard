@@ -1,0 +1,126 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 21,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "linux-base",
+      "hidden": true,
+
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    },
+    {
+      "name": "linux-debug",
+      "displayName": "Linux Debug",
+      "description": "Compilação de desenvolvimento para Linux com símbolos de debug",
+      "inherits": "linux-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "linux-release",
+      "displayName": "Linux Release",
+      "description": "Compilação otimizada para Linux",
+      "inherits": "linux-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "windows-base",
+      "hidden": true,
+
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_SYSTEM_NAME": "Windows"
+      }
+    },
+    {
+      "name": "windows-msys2-debug",
+      "displayName": "Windows MSYS2 (Debug)",
+      "description": "Compilação no Windows utilizando toolchain MSYS2/MinGW UCRT64",
+      "inherits": "windows-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "windows-msys2-release",
+      "displayName": "Windows MSYS2 (Release)",
+      "description": "Compilação de produção no Windows utilizando toolchain MSYS2/MinGW UCRT64",
+      "inherits": "windows-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "windows-vcpkg-release",
+      "displayName": "Windows vcpkg (Release)",
+      "description": "Compilação no Windows utilizando vcpkg e MSVC",
+      "inherits": "windows-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "windows-cross",
+      "displayName": "Windows Cross-Compilation (MinGW)",
+      "description": "Cross-compilação de Linux para Windows (.exe) via MinGW",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "toolchainFile": "${sourceDir}/cmake/x86_64-w64-mingw32.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "linux-debug",
+      "displayName": "Build Linux Debug",
+      "configurePreset": "linux-debug"
+    },
+    {
+      "name": "linux-release",
+      "displayName": "Build Linux Release",
+      "configurePreset": "linux-release"
+    },
+    {
+      "name": "windows-msys2-debug",
+      "displayName": "Build Windows MSYS2 Debug",
+      "configurePreset": "windows-msys2-debug"
+    },
+    {
+      "name": "windows-msys2-release",
+      "displayName": "Build Windows MSYS2 Release",
+      "configurePreset": "windows-msys2-release"
+    },
+    {
+      "name": "windows-vcpkg-release",
+      "displayName": "Build Windows vcpkg Release",
+      "configurePreset": "windows-vcpkg-release"
+    },
+    {
+      "name": "windows-cross",
+      "displayName": "Build Windows Cross (MinGW)",
+      "configurePreset": "windows-cross"
+    }
+  ]
+}
